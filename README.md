@@ -47,8 +47,8 @@ class Handler extends ExceptionHandler
 //bootstrap/app.php
 
 $app->configureMonologUsing(function($monolog) use ($app) {
-    $airbrakeNotifier = (new Kouz\Providers\AirbrakeHandler($app))->handle();
-    $monologHandler = new Airbrake\MonologHandler($airbrakeNotifier, Monolog\Logger::ERROR);
+    $FaultlineNotifier = (new Faultline\Laravel\FaultlineHandler($app))->handle();
+    $monologHandler = new Faultline\MonologHandler($FaultlineNotifier, Monolog\Logger::ERROR);
     $monolog->pushHandler($monologHandler);
 });
 ```
