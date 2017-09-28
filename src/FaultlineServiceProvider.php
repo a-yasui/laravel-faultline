@@ -15,12 +15,15 @@ class FaultlineServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        $this->publishes( [
+            __DIR__ . '/../config/faultline.php' => config_path( 'faultline.php' ),
+        ] );
 
     }
 
     public function register()
     {
-        $this->app->singleton( 'Faultline\Laravel\Notifier', function ($app){
+        $this->app->singleton( 'Faultline\Notifier', function ($app){
             return new FaultlineHandler( $app );
         } );
     }
