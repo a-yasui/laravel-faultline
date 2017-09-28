@@ -1,0 +1,14 @@
+{
+    "name": "a-yasui/laravel-faultline",
+    "type": "library",
+    "require": {
+        "faultline/faultline": "^0.6.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "a.yasui",
+            "email": "a.yasui@gmail.com"
+        }
+    ]
+}
