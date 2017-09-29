@@ -24,8 +24,8 @@ class FaultlineServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton( 'Faultline\Notifier', function ($app){
-            $handler = new FaultlineHandler( $app );
-            return $handler->handle();
+            $notifier = new \Faultline\Notifier( $app['config'][ 'faultline' ] );
+            return $notifier;
         } );
     }
 }

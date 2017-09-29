@@ -8,30 +8,30 @@
 
 return [
     'project' => 'faultline-php',
-    'apiKey' => 'xxxxXXXXXxXxXXxxXXXXXXXxxxxXXXXXX',
-    'endpoint' => 'https://xxxxxxxxx.execute-api.ap-northeast-1.amazonaws.com/v0',
+    'apiKey' => env('FAULTLINE_API_KEY', ''),
+    'endpoint' => env('FAULTLINE_API_ENDPOINT', ''),
     'notifications' => [
-        [
-            'type'=> 'slack',
-            'endpoint'=> 'https://hooks.slack.com/services/XXXXXXXXXX/B2RAD9423/WC2uTs3MyGldZvieAtAA7gQq',
-            'channel'=> '#random',
-            'username'=> 'faultline-notify',
-            'notifyInterval'=> 5,
-            'threshold'=> 10,
-            'timezone'=> 'Asia/Tokyo'
-        ],
-        [
-            'type'=> 'github',
-            'userToken'=> 'XXXXXXXxxxxXXXXXXxxxxxXXXXXXXXXX',
-            'owner'=> 'k1LoW',
-            'repo'=> 'faultline',
-            'labels'=> [
-                'faultline', 'bug'
-            ],
-            'if_exist'=> 'reopen-and-comment',
-            'notifyInterval'=> 1,
-            'threshold'=> 1,
-            'timezone'=> 'Asia/Tokyo'
-        ]
+//        [
+//            'type'=> 'slack',
+//            'endpoint'=> 'https://hooks.slack.com/services/XXXXXXXXXX/B2RAD9423/WC2uTs3MyGldZvieAtAA7gQq',
+//            'channel'=> '#random',
+//            'username'=> 'faultline-notify',
+//            'notifyInterval'=> 5,
+//            'threshold'=> 10,
+//            'timezone'=> 'Asia/Tokyo'
+//        ],
+//        [
+//            'type'=> 'github',
+//            'userToken'=> 'XXXXXXXxxxxXXXXXXxxxxxXXXXXXXXXX',
+//            'owner'=> 'k1LoW',
+//            'repo'=> 'faultline',
+//            'labels'=> [
+//                'faultline', 'bug'
+//            ],
+//            'if_exist'=> 'reopen-and-comment',
+//            'notifyInterval'=> 1,
+//            'threshold'=> 1,
+//            'timezone'=> 'Asia/Tokyo'
+//        ]
     ]
 ];
