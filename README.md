@@ -3,7 +3,14 @@
 
 # Install
 
+
+
 # Basic Usage
+
+```.env
+FAULTLINE_API_KEY=<api key>
+FAULTLINE_ENDPOINT=https://xxXXxxXX.execute-api.ap-northeast-1.amazonaws.com/v0
+```
 
 ## Exception Handler
 
@@ -30,8 +37,7 @@ class Handler extends ExceptionHandler
     public function report(Exception $e)
     {
         if ($this->shouldReport($e)) {
-            $airbrakeNotifier = app('Airbrake\Notifier');
-            $airbrakeNotifier->notify($e);
+            app(\Faultline\Notifier::class)->notify($e);
         }
     
         parent::report($e);
